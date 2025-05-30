@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Work Lab</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      display: flex;
+    }
+    .sidebar {
+      width: 200px;
+      background: #222;
+      color: white;
+      height: 100vh;
+      padding: 20px;
+    }
+    .sidebar button {
+      width: 100%;
+      padding: 10px;
+      background: #4CAF50;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+    .content {
+      flex: 1;
+      padding: 20px;
+      background: #f4f4f4;
+    }
+    .header {
+      text-align: center;
+    }
+    .header h1 {
+      margin: 0;
+      font-size: 36px;
+    }
+    .section {
+      margin: 20px auto;
+      max-width: 500px;
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px #ccc;
+    }
+    input, textarea, button {
+      width: 100%;
+      margin: 10px 0;
+      padding: 10px;
+    }
+    .ads {
+      margin-top: 40px;
+      background: #fff8dc;
+      padding: 10px;
+      border: 1px solid #ccc;
+      text-align: center;
+    }
+    .hidden {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="sidebar">
+    <h2>Menu</h2>
+    <button id="startEarn" class="hidden">Start Earn</button>
+  </div>
+  <div class="content">
+    <div class="header">
+      <h1>Work Lab</h1>
+      <p>Join Now</p>
+    </div>
+
+    <div class="section">
+      <h3>Enter Easypaisa Number:</h3>
+      <input type="text" id="easypaisaNumber" placeholder="03xx-xxxxxxx"/>
+    </div>
+
+    <div class="section">
+      <h3>Upload Payment Screenshot</h3>
+      <input type="file" id="screenshotUpload" />
+      <button onclick="activate()">Submit Payment</button>
+    </div>
+
+    <div class="section ads">
+      <h3>Watch Ads</h3>
+      <p>👇 Ads will appear here 👇</p>
+      <iframe width="300" height="200" src="https://www.youtube.com/embed/dQw4w9WgXcQ" allowfullscreen></iframe>
+    </div>
+  </div>
+
+  <script>
+    function activate() {
+      const number = document.getElementById("easypaisaNumber").value;
+      const file = document.getElementById("screenshotUpload").files[0];
+      if(number && file){
+        alert("Payment submitted. You can now start earning!");
+        document.getElementById("startEarn").classList.remove("hidden");
+      } else {
+        alert("Please enter your number and upload screenshot.");
+      }
+    }
+  </script>
+</body>
+</html>
